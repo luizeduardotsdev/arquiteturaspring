@@ -17,4 +17,24 @@ public class MontadoraConfiguration {
         motor.setTipo(TipoMotor.CARBURADO);
         return motor;
     }
+
+    @Bean
+    public Motor motorEltrico() {
+        var motor = new Motor();
+        motor.setCavalos(150);
+        motor.setLitragem(2.2);
+        motor.setModelo("th-10");
+        motor.setTipo(TipoMotor.ELETRICO);
+        return motor;
+    }
+
+    @Bean
+    public Motor motorTurbo() {
+        var motor = new Motor();
+        motor.setCavalos(190);
+        motor.setLitragem(1.5);
+        motor.setModelo("KO-2");
+        motor.setTipo(TipoMotor.TURBO);
+        return motor;
+    }
 }

@@ -1,4 +1,4 @@
-package io.github.luizeduardotsdev.arquiteturaspring.api;
+package io.github.luizeduardotsdev.arquiteturaspring.montadora.api;
 
 import io.github.luizeduardotsdev.arquiteturaspring.montadora.CarroStatus;
 import io.github.luizeduardotsdev.arquiteturaspring.montadora.Chave;

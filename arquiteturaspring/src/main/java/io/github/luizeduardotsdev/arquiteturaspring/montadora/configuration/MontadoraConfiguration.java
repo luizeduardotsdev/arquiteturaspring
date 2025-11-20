@@ -1,4 +1,4 @@
-package io.github.luizeduardotsdev.arquiteturaspring.configuration;
+package io.github.luizeduardotsdev.arquiteturaspring.montadora.configuration;
 
 import io.github.luizeduardotsdev.arquiteturaspring.montadora.Motor;
 import io.github.luizeduardotsdev.arquiteturaspring.montadora.TipoMotor;

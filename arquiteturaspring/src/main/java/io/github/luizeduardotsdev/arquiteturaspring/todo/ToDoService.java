@@ -2,6 +2,8 @@ package io.github.luizeduardotsdev.arquiteturaspring.todo;
 
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class ToDoService {
 
@@ -16,8 +18,8 @@ public class ToDoService {
         return toDoRepository.save(toDoEntity);
     }
 
-    public ToDoEntity buscarPorId(Integer id) {
-        return toDoRepository.getReferenceById(id);
+    public Optional<ToDoEntity> buscarPorId(Integer id) {
+        return toDoRepository.findById(id);
     }
 
 }

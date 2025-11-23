@@ -15,6 +15,7 @@ public class ArquiteturaspringApplication {
         builder.bannerMode(Banner.Mode.OFF);
         builder.profiles("producao");
         builder.run(args);
+        builder.lazyInitialization(true);
 
         ConfigurableApplicationContext context = builder.context();
 

@@ -11,5 +11,9 @@ public class ToDoService {
         this.toDoRepository = toDoRepository;
     }
 
+    public ToDoEntity salvar(ToDoEntity toDoEntity) {
+
+        return toDoRepository.save(toDoEntity);
+    }
 
 }

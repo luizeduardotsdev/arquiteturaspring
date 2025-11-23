@@ -10,7 +10,7 @@ public class ToDoEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String descricao;
-    private Boolean conluido;
+    private Boolean concluido;
 
     public int getId() {
         return id;
@@ -28,11 +28,11 @@ public class ToDoEntity {
         this.descricao = descricao;
     }
 
-    public Boolean getConluido() {
-        return conluido;
+    public Boolean getConcluido() {
+        return concluido;
     }
 
-    public void setConluido(Boolean conluido) {
-        this.conluido = conluido;
+    public void setConcluido(Boolean conluido) {
+        this.concluido = conluido;
     }
 }

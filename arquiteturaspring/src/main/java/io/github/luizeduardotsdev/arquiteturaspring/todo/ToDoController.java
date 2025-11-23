@@ -2,7 +2,6 @@ package io.github.luizeduardotsdev.arquiteturaspring.todo;
 
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -18,6 +17,13 @@ public class ToDoController {
     @PostMapping
     public ToDoEntity salvar(@RequestBody ToDoEntity toDoEntity) {
         return this.toDoService.salvar(toDoEntity);
+    }
+
+    @PutMapping("/{id}")
+    public void atualizarStatus(@PathVariable("id")  Integer id, @RequestBody ToDoEntity toDoEntity) {
+        toDoEntity.setId(id);
+
+        toDoService.atualizarStatus(toDoEntity);
     }
 
     @GetMapping("/{id}")

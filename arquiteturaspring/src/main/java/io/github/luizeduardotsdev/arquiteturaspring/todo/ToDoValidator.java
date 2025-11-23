@@ -11,14 +11,16 @@ public class ToDoValidator {
         this.toDoRepository = toDoRepository;
     }
 
+    private boolean existDescricao(String descricao) {
+
+        return toDoRepository.existsByDescricao(descricao);
+    }
+
     public void validar(ToDoEntity toDoEntity) {
-        if(existeDescricao(toDoEntity.getDescricao())){
+        if(existDescricao(toDoEntity.getDescricao())){
             throw new IllegalArgumentException("ja existe um to do com essa descricao");
         }
     }
 
-    private boolean existeDescricao(String descricao) {
 
-        return toDoRepository.existByDescricao(descricao);
-    }
 }

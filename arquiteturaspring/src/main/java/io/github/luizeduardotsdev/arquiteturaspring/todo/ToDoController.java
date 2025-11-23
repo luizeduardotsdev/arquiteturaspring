@@ -4,7 +4,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/todo")
@@ -34,7 +33,7 @@ public class ToDoController {
     }
 
     @GetMapping("/{id}")
-    public Optional<ToDoEntity> buscarTodo(@PathVariable("id") Integer id) {
+    public ToDoEntity buscarTodo(@PathVariable("id") Integer id) {
         return toDoService.buscarPorId(id);
     }
 }

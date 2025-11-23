@@ -22,14 +22,14 @@ public class ToDoService {
         return toDoRepository.save(toDoEntity);
     }
 
-    public ToDoEntity atualizarStatus(ToDoEntity toDoEntity) {
-
+    public void atualizarStatus(ToDoEntity toDoEntity) {
+        toDoRepository.save(toDoEntity);
         mailSender.enviarMensagem(toDoEntity.getDescricao());
-        return toDoRepository.save(toDoEntity);
+
     }
 
-    public Optional<ToDoEntity> buscarPorId(Integer id) {
-        return toDoRepository.findById(id);
+    public ToDoEntity buscarPorId(Integer id) {
+        return toDoRepository.findById(id).orElse(null);
     }
 
 }

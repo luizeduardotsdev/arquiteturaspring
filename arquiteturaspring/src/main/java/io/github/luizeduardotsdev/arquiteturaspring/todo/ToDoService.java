@@ -11,8 +11,10 @@ public class ToDoService {
     private ToDoValidator toDoValidator;
     private MailSender mailSender;
 
-    public ToDoService(ToDoRepository toDoRepository) {
+    public ToDoService(ToDoRepository toDoRepository, ToDoValidator toDoValidator, MailSender mailSender) {
         this.toDoRepository = toDoRepository;
+        this.toDoValidator = toDoValidator;
+        this.mailSender = mailSender;
     }
 
     public ToDoEntity salvar(ToDoEntity toDoEntity) {

@@ -8,17 +8,21 @@ import java.util.Optional;
 public class ToDoService {
 
     private ToDoRepository toDoRepository;
+    private ToDoValidator toDoValidator;
+    private MailSender mailSender;
 
     public ToDoService(ToDoRepository toDoRepository) {
         this.toDoRepository = toDoRepository;
     }
 
     public ToDoEntity salvar(ToDoEntity toDoEntity) {
-
+        toDoValidator.validar(toDoEntity);
         return toDoRepository.save(toDoEntity);
     }
 
     public ToDoEntity atualizarStatus(ToDoEntity toDoEntity) {
+
+        mailSender.enviarMensagem(toDoEntity.getDescricao());
         return toDoRepository.save(toDoEntity);
     }
 

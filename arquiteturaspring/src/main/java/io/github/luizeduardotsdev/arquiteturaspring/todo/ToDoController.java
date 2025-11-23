@@ -1,6 +1,8 @@
 package io.github.luizeduardotsdev.arquiteturaspring.todo;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.Optional;
 
@@ -16,7 +18,12 @@ public class ToDoController {
 
     @PostMapping
     public ToDoEntity salvar(@RequestBody ToDoEntity toDoEntity) {
-        return this.toDoService.salvar(toDoEntity);
+        try {
+            return this.toDoService.salvar(toDoEntity);
+        } catch (IllegalArgumentException e) {
+            var mensagem = e.getMessage();
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, mensagem);
+        }
     }
 
     @PutMapping("/{id}")

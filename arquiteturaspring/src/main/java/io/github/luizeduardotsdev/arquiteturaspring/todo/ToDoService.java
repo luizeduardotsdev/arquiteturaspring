@@ -18,6 +18,10 @@ public class ToDoService {
         return toDoRepository.save(toDoEntity);
     }
 
+    public ToDoEntity atualizarStatus(ToDoEntity toDoEntity) {
+        return toDoRepository.save(toDoEntity);
+    }
+
     public Optional<ToDoEntity> buscarPorId(Integer id) {
         return toDoRepository.findById(id);
     }

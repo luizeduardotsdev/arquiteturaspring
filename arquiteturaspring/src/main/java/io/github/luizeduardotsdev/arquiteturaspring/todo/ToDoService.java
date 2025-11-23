@@ -16,4 +16,8 @@ public class ToDoService {
         return toDoRepository.save(toDoEntity);
     }
 
+    public ToDoEntity buscarPorId(Integer id) {
+        return toDoRepository.getReferenceById(id);
+    }
+
 }
